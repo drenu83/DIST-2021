@@ -1,2 +1,2 @@
 # DIST-2021
-Projekti Semestral ne kuader te lendes DIST
+Projekti Semestral ne kuader te lendes DIST-2021
