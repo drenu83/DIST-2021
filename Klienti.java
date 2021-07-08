@@ -207,4 +207,20 @@ public class Klienti extends JFrame {
 
 		}
 	}
-	
+		public void UpdateTable(List<LendaEntity> lendet_list,LocalDate data) //data = kur fillon afati perkatese
+	{
+		DefaultTableModel dm = new DefaultTableModel(0, 0);
+		 //lenda, java, dita, viti
+		    String header[] = new String[] { "Lenda", "Viti", "Java","Dita","Data","Ora"};
+		    dm.setColumnIdentifiers(header);
+		    tblResult.setModel(dm);
+
+		    for (LendaEntity ae : lendet_list) {
+		    	int days = (ae.getJava()-1) * 7 + ae.getDita() -1; // formual qe llogarit daten e provimit duke u bazuar ne daten e fillimit te afatit dhe javes dhe dite se provimet
+		    	ae.setData_Provimit(data.plusDays(days));	//	 data e fillimit te afati plus ditet e formules    
+		        dm.addRow(new Object[] {ae.getLenda(),ae.getViti(),ae.getJava(),dbfunc.getEmriDites(ae.getDita()),ae.getData_Provimit(),ae.getOra()});
+		    }	
+	}
+	/**
+	 * Create the frame.
+	 */
