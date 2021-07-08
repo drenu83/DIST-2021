@@ -327,3 +327,21 @@ public class Klienti extends JFrame {
 		
 		JButton btnSubmit = new JButton("");
 		btnSubmit.addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent arg0) {
+
+				try 
+				{
+					String msgout="";
+					msgout=txtChat.getText().trim();
+					dout_chat.writeUTF(msgout);
+					txtMsgArea.setText(txtMsgArea.getText().trim()+"\n You :\t"+ msgout); 
+					txtChat.setText("");
+				} 
+				catch (Exception e3) 
+				{
+					
+				}
+			
+			}
+		});
