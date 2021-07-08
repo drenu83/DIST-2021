@@ -350,3 +350,25 @@ public class Klienti extends JFrame {
 		btnSubmit.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
 		btnSubmit.setBounds(1362, 707, 89, 41);
 		contentPane.add(btnSubmit);
+
+		JLabel label = new JLabel("");
+        Image label1 = new ImageIcon(this.getClass().getResource("/resources/up.gif")).getImage();
+		label.setIcon(new ImageIcon(label1));
+        label.setBounds(79, 39, 171, 153);
+        contentPane.add(label);
+        
+		JLabel label_2 = new JLabel("Orari i Provimeve per Fakultetin e Inxhinierise Elektrike dhe Kompjuterike");
+		label_2.setForeground(new Color(0, 102, 102));
+		label_2.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 25));
+		label_2.setBounds(310, 39, 1037, 63);
+		contentPane.add(label_2);
+		
+		JLabel lblFoto = new JLabel("");
+		lblFoto.setBounds(79, 39, 185, 147);
+		contentPane.add(lblFoto);
+		
+		txtChat = new JTextField();
+		txtChat.setText("");
+		txtChat.setBounds(986, 707, 366, 41);
+		contentPane.add(txtChat);
+		txtChat.setColumns(10);
