@@ -163,6 +163,20 @@ public class Klienti extends JFrame {
 			e.printStackTrace();
 		}
 
+@SuppressWarnings("unchecked")
+	public void shfaqProvimet()
+	{		
+		try {
+		String afati =  String.valueOf(cmbAfatet.getSelectedItem()); // merre afatin nga comboboxi cmbAfatet psht JANAR
+		int viti = Integer.parseInt(String.valueOf(cmbYear.getSelectedItem())); //merre vitin PSH. 2019
+		int lendaViti =Integer.parseInt(String.valueOf(cmbViti.getSelectedItem())); // merre vitin e lendeve pshe viti i 1
+		List<LendaEntity> lendet_list = new ArrayList<LendaEntity>();
+		LocalDate fillimi_afatit = null;
+		String [] teDhenat;
 
+		dout.writeUTF(afati + ":" + viti); // dergo tek serveri emrin dhe vitin e afatit qe po e kerkon klienti psh "Janar:2019"
+		String msgin =din.readUTF(); //merr mesazhin nga serveri psht "false:false" ose "true:2019-06-11"
+	
+		teDhenat = msgin.split(":");
 		
 
