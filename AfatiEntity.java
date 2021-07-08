@@ -23,3 +23,19 @@ public class AfatiEntity {
 	public void setAfati(String afati) {
 		this.afati = afati;
 	}
+	public LocalDate getStart_Date() {
+		return start_Date;
+	}
+
+	public void setStart_Date(LocalDate start_Date) {
+		this.start_Date = start_Date;
+	}
+
+	public int getViti() {
+		return start_Date.getYear();
+	}
+	
+	
+
+}
+
