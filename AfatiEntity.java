@@ -7,4 +7,11 @@ public class AfatiEntity {
     private String afati;
 	
 	private LocalDate start_Date; 
-		
+
+	public int getID() {
+		return ID;
+	}
+
+	public void setID(int iD) {
+		ID = iD;
+	}
