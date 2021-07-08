@@ -345,3 +345,8 @@ public class Klienti extends JFrame {
 			
 			}
 		});
+		btnSubmit.setIcon(new ImageIcon(Klienti.class.getResource("/resources/sendIcon1.png")));
+		btnSubmit.setForeground(new Color(0, 102, 51));
+		btnSubmit.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		btnSubmit.setBounds(1362, 707, 89, 41);
+		contentPane.add(btnSubmit);
