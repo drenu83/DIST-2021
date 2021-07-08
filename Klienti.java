@@ -304,3 +304,10 @@ public class Klienti extends JFrame {
 		cmbYear.setModel(new DefaultComboBoxModel<>(new String[] {"2017", "2018", "2019"}));
 		cmbYear.setBounds(364, 397, 74, 20);
 		contentPane.add(cmbYear);
+		
+			JLabel lblAfatiFillonMe = new JLabel("Afati fillon me:");
+		lblAfatiFillonMe.setForeground(new Color(0, 102, 51));
+		lblAfatiFillonMe.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		lblAfatiFillonMe.setBounds(264, 439, 108, 14);
+		contentPane.add(lblAfatiFillonMe);
+		
