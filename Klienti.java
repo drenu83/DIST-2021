@@ -120,6 +120,49 @@ public class Klienti extends JFrame {
 			
 		});	
 		
+			public static void main(String[] args) throws UnknownHostException, IOException {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Klienti frame = new Klienti();
+					frame.setExtendedState(frame.MAXIMIZED_BOTH);					
+					frame.setVisible(true); 
+					frame.setResizable(false);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+					
+				}
+			}
+			
+		});	
 		
+		
+		
+		try {			
+			// lidhja me server per kerkim te afateve
+			s_data = new Socket("localhost", 4443);	
+			oinA = new ObjectInputStream(s_data.getInputStream());
+			System.out.println("Lidhja me klientin u realizua");
+			din = new DataInputStream(s_data.getInputStream());
+			dout = new DataOutputStream(s_data.getOutputStream());
+			//lidhja me server per chat
+			s = new Socket("localhost", 4444);			
+			din_chat=new DataInputStream(s.getInputStream());//din per chat
+			dout_chat=new DataOutputStream(s.getOutputStream());//dout per chat
+			String msgin="";
+			while(!msgin.equals("exit"))
+			{
+				msgin=din_chat.readUTF();
+				System.out.println("Nklienti texti i prnauar:"+msgin);
+				txtMsgArea.setText(txtMsgArea.getText().trim()+"\nServeri: \t"+msgin); 
+			}
+			
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+
 		
 
