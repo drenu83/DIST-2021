@@ -15,3 +15,11 @@ public class AfatiEntity {
 	public void setID(int iD) {
 		ID = iD;
 	}
+
+	public String getAfati() {
+		return afati;
+	}
+
+	public void setAfati(String afati) {
+		this.afati = afati;
+	}
