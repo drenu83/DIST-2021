@@ -304,10 +304,26 @@ public class Klienti extends JFrame {
 		cmbYear.setModel(new DefaultComboBoxModel<>(new String[] {"2017", "2018", "2019"}));
 		cmbYear.setBounds(364, 397, 74, 20);
 		contentPane.add(cmbYear);
-		
+
 			JLabel lblAfatiFillonMe = new JLabel("Afati fillon me:");
 		lblAfatiFillonMe.setForeground(new Color(0, 102, 51));
 		lblAfatiFillonMe.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
 		lblAfatiFillonMe.setBounds(264, 439, 108, 14);
 		contentPane.add(lblAfatiFillonMe);
 		
+		txtFillimi = new JTextField();
+		txtFillimi.setEditable(false);
+		txtFillimi.setBounds(364, 437, 132, 20);
+		contentPane.add(txtFillimi);
+		txtFillimi.setColumns(10);
+		
+		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane.setBounds(139, 39, 1, 1);
+		contentPane.add(desktopPane);
+		
+		JScrollPane scrollPaneArea = new JScrollPane();
+		scrollPaneArea.setBounds(980, 191, 471, 344);
+		contentPane.add(scrollPaneArea);
+		
+		JButton btnSubmit = new JButton("");
+		btnSubmit.addActionListener(new ActionListener() {
