@@ -264,3 +264,22 @@ public class Klienti extends JFrame {
 				"Emri i Lendes", "Viti", "Java", "Dita", "Ora", "Data"
 			}
 		));
+		tblResult.setForeground(new Color(0, 102, 51));
+		tblResult.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		tblResult.setBackground(SystemColor.menu);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(423, 307, 2, 2);
+		contentPane.add(scrollPane);
+		
+		JButton btnKerko = new JButton("Kerko");
+		btnKerko.setForeground(new Color(0, 102, 51));
+		btnKerko.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		btnKerko.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Thread t_Kerko = new Thread(new Runnable() {
+					@Override 
+					public void run() {
+						shfaqProvimet();
+					}
+		});
