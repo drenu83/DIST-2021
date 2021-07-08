@@ -283,3 +283,24 @@ public class Klienti extends JFrame {
 						shfaqProvimet();
 					}
 		});
+		t_Kerko.start();}});
+		btnKerko.setBounds(590, 434, 89, 23);
+		contentPane.add(btnKerko);
+		cmbAfatet.setForeground(new Color(0, 102, 51));
+		cmbAfatet.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		
+		cmbAfatet.setModel(new DefaultComboBoxModel<>(new String[] {"Janar", "Qershor", "Shtator"}));
+		cmbAfatet.setBounds(79, 397, 163, 20);
+		contentPane.add(cmbAfatet);
+		
+		JLabel label_1 = new JLabel("Viti");
+		label_1.setForeground(new Color(0, 102, 51));
+		label_1.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		label_1.setBounds(264, 400, 46, 14);
+		contentPane.add(label_1);
+		cmbYear.setForeground(new Color(0, 102, 51));
+		cmbYear.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		
+		cmbYear.setModel(new DefaultComboBoxModel<>(new String[] {"2017", "2018", "2019"}));
+		cmbYear.setBounds(364, 397, 74, 20);
+		contentPane.add(cmbYear);
