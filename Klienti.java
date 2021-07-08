@@ -247,4 +247,20 @@ public class Klienti extends JFrame {
 		contentPane.add(lblViti);
 		cmbViti.setForeground(new Color(0, 102, 51));
 		cmbViti.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		cmbViti.setModel(new DefaultComboBoxModel<>(new String[] {"1", "2", "3"}));
+		cmbViti.setBounds(79, 436, 74, 20);
+		contentPane.add(cmbViti);
 		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(21, 467, 662, 246);
+		contentPane.add(scrollPane_1);
+		
+		tblResult = new JTable();
+		scrollPane_1.setViewportView(tblResult);
+		tblResult.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Emri i Lendes", "Viti", "Java", "Dita", "Ora", "Data"
+			}
+		));
