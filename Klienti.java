@@ -102,7 +102,13 @@ public class Klienti extends JFrame {
 	static TargetDataLine targetDataLine;
 	static SourceDataLine sourceDataLine;
 	static ByteArrayOutputStream byteArrayOutputStream;
+	
 
+	/**e
+	 * Launch the application.
+	 * @throws IOException 
+	 * @throws UnknownHostException 
+	 */
 	public static void main(String[] args) throws UnknownHostException, IOException {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -119,24 +125,6 @@ public class Klienti extends JFrame {
 			}
 			
 		});	
-		
-			public static void main(String[] args) throws UnknownHostException, IOException {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Klienti frame = new Klienti();
-					frame.setExtendedState(frame.MAXIMIZED_BOTH);					
-					frame.setVisible(true); 
-					frame.setResizable(false);
-					
-				} catch (Exception e) {
-					e.printStackTrace();
-					
-				}
-			}
-			
-		});	
-		
 		
 		
 		try {			
@@ -162,8 +150,10 @@ public class Klienti extends JFrame {
 		{
 			e.printStackTrace();
 		}
-
-@SuppressWarnings("unchecked")
+		
+		
+	}
+	@SuppressWarnings("unchecked")
 	public void shfaqProvimet()
 	{		
 		try {
@@ -178,9 +168,8 @@ public class Klienti extends JFrame {
 		String msgin =din.readUTF(); //merr mesazhin nga serveri psht "false:false" ose "true:2019-06-11"
 	
 		teDhenat = msgin.split(":");
-		
-
-	if(teDhenat[0].equals("true")) // nese afati egziston beje thirrjen e dyt tek server qe ti kthej te gjitha lendet e vitit te caktuar psh 1
+        
+		if(teDhenat[0].equals("true")) // nese afati egziston beje thirrjen e dyt tek server qe ti kthej te gjitha lendet e vitit te caktuar psh 1
 		{			
 			fillimi_afatit =LocalDate.parse(teDhenat[1]); //merre daten e fillimit te afatit nga pergjigjja e serverit true:2019-06-11
 			dout.writeUTF(String.valueOf(lendaViti)); // degojm tek serveri lendet e cilit viti deshirojm ti shohim psh 1,2,3
@@ -207,7 +196,9 @@ public class Klienti extends JFrame {
 
 		}
 	}
-		public void UpdateTable(List<LendaEntity> lendet_list,LocalDate data) //data = kur fillon afati perkatese
+	
+	
+	public void UpdateTable(List<LendaEntity> lendet_list,LocalDate data) //data = kur fillon afati perkatese
 	{
 		DefaultTableModel dm = new DefaultTableModel(0, 0);
 		 //lenda, java, dita, viti
@@ -224,7 +215,7 @@ public class Klienti extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	 public Klienti() {
+	public Klienti() {
 		setTitle("Klienti");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1524, 902);
@@ -247,6 +238,8 @@ public class Klienti extends JFrame {
 		contentPane.add(lblViti);
 		cmbViti.setForeground(new Color(0, 102, 51));
 		cmbViti.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		
+	
 		cmbViti.setModel(new DefaultComboBoxModel<>(new String[] {"1", "2", "3"}));
 		cmbViti.setBounds(79, 436, 74, 20);
 		contentPane.add(cmbViti);
@@ -282,8 +275,7 @@ public class Klienti extends JFrame {
 					public void run() {
 						shfaqProvimet();
 					}
-		});
-		t_Kerko.start();}});
+		});t_Kerko.start();}});
 		btnKerko.setBounds(590, 434, 89, 23);
 		contentPane.add(btnKerko);
 		cmbAfatet.setForeground(new Color(0, 102, 51));
@@ -304,8 +296,8 @@ public class Klienti extends JFrame {
 		cmbYear.setModel(new DefaultComboBoxModel<>(new String[] {"2017", "2018", "2019"}));
 		cmbYear.setBounds(364, 397, 74, 20);
 		contentPane.add(cmbYear);
-
-			JLabel lblAfatiFillonMe = new JLabel("Afati fillon me:");
+		
+		JLabel lblAfatiFillonMe = new JLabel("Afati fillon me:");
 		lblAfatiFillonMe.setForeground(new Color(0, 102, 51));
 		lblAfatiFillonMe.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
 		lblAfatiFillonMe.setBounds(264, 439, 108, 14);
@@ -327,7 +319,6 @@ public class Klienti extends JFrame {
 		
 		JButton btnSubmit = new JButton("");
 		btnSubmit.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent arg0) {
 
 				try 
@@ -350,7 +341,8 @@ public class Klienti extends JFrame {
 		btnSubmit.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
 		btnSubmit.setBounds(1362, 707, 89, 41);
 		contentPane.add(btnSubmit);
-
+		
+		
 		JLabel label = new JLabel("");
         Image label1 = new ImageIcon(this.getClass().getResource("/resources/up.gif")).getImage();
 		label.setIcon(new ImageIcon(label1));
@@ -372,3 +364,31 @@ public class Klienti extends JFrame {
 		txtChat.setBounds(986, 707, 366, 41);
 		contentPane.add(txtChat);
 		txtChat.setColumns(10);
+		
+		
+		txtMsgArea = new JTextArea();
+		txtMsgArea.setBounds(988, 191, 463, 201);
+		contentPane.add(txtMsgArea);
+		txtMsgArea.setEditable(false);
+		txtMsgArea.setForeground(new Color(0, 102, 51));
+		txtMsgArea.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		txtMsgArea.setBackground(SystemColor.menu);
+		
+		JLabel label_3 = new JLabel("Chat");
+		label_3.setForeground(new Color(0, 102, 102));
+		label_3.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 16));
+		label_3.setBounds(1196, 141, 46, 14);
+		contentPane.add(label_3);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(Color.BLACK));
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(958, 111, 516, 667);
+		contentPane.add(panel);
+		
+	        
+}
+
+
+
+}
