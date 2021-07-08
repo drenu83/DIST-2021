@@ -102,3 +102,24 @@ public class Klienti extends JFrame {
 	static TargetDataLine targetDataLine;
 	static SourceDataLine sourceDataLine;
 	static ByteArrayOutputStream byteArrayOutputStream;
+
+	public static void main(String[] args) throws UnknownHostException, IOException {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Klienti frame = new Klienti();
+					frame.setExtendedState(frame.MAXIMIZED_BOTH);					
+					frame.setVisible(true); 
+					frame.setResizable(false);
+					
+				} catch (Exception e) {
+					e.printStackTrace();
+					
+				}
+			}
+			
+		});	
+		
+		
+		
+
