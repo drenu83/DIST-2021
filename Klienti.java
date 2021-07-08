@@ -224,3 +224,27 @@ public class Klienti extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	 public Klienti() {
+		setTitle("Klienti");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1524, 902);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblAfati = new JLabel("Afati");
+		lblAfati.setForeground(new Color(0, 102, 51));
+		lblAfati.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		lblAfati.setBounds(37, 400, 46, 14);
+		contentPane.add(lblAfati);
+		
+		JLabel lblViti = new JLabel("Viti");
+		lblViti.setForeground(new Color(0, 102, 51));
+		lblViti.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		lblViti.setBounds(37, 439, 46, 14);
+		contentPane.add(lblViti);
+		cmbViti.setForeground(new Color(0, 102, 51));
+		cmbViti.setFont(new Font("Trebuchet MS", Font.BOLD | Font.ITALIC, 12));
+		
