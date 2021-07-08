@@ -180,3 +180,31 @@ public class Klienti extends JFrame {
 		teDhenat = msgin.split(":");
 		
 
+	if(teDhenat[0].equals("true")) // nese afati egziston beje thirrjen e dyt tek server qe ti kthej te gjitha lendet e vitit te caktuar psh 1
+		{			
+			fillimi_afatit =LocalDate.parse(teDhenat[1]); //merre daten e fillimit te afatit nga pergjigjja e serverit true:2019-06-11
+			dout.writeUTF(String.valueOf(lendaViti)); // degojm tek serveri lendet e cilit viti deshirojm ti shohim psh 1,2,3
+		 lendet_list = (List<LendaEntity>) oinA.readObject();//lexo lendet qe i ka kthyer serveri 
+			
+			if(lendet_list.size()==0) { //nese lista eshte e zbrazet shfaq mesazhin 
+				JOptionPane.showMessageDialog(null, "Lista eshte e zbrazet!");		
+			}
+			txtFillimi.setText(fillimi_afatit.toString()); ///tregon kur fillon afati
+			UpdateTable(lendet_list,fillimi_afatit); // mbush tabelen me te dhena nese lista eshte e zbrazet tabela zbrazet
+		}
+		else {
+		//nese eshte false pergjigja nga serveri trego qe afati nuk egziston ne databaze
+			JOptionPane.showMessageDialog(null, "Afati " + afati + "-"+viti +" nuk egziston!");
+			UpdateTable(lendet_list,LocalDate.now()); //pastro tabelen 
+			txtFillimi.setText(""); //fshi textboxin
+		}	
+			
+		}
+		
+		catch(Exception e)
+		{
+			JOptionPane.showMessageDialog(null, e);
+
+		}
+	}
+	
