@@ -18,5 +18,20 @@ public class DbFunc {
 	private String update_Lenden = "UPDATE lendet SET lenda = ?, java= ?,dita = ?, viti = ?, ora = ? WHERE id = ?";
 	private String update_Afatin = "UPDATE afatet SET afati = ?,start_date = ?, viti = ? WHERE id = ?";
 
-	
+	public AfatiEntity getAfati(Connection connection,String afati, int viti) throws SQLException{
+		PreparedStatement pst = connection.prepareStatement(selectAfati);
+		pst.setString(1, afati);
+		pst.setInt(2, viti);
+		AfatiEntity af = new AfatiEntity();
+		ResultSet rs = pst.executeQuery();		// egzekuto querin, kthen 1 rreshta ose 0 te cilet e plotesojn kushtin 
+			while(rs.next())
+			{				
+				af.setID(rs.getInt("id"));
+				af.setAfati(rs.getString("afati"));
+				af.setStart_Date(rs.getDate("start_date").toLocalDate());				
+			}	
+		
+		return af;		
+	}
+
 	
