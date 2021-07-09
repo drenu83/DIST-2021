@@ -68,3 +68,22 @@ public List<AfatiEntity> returnAfatet(Connection connection) throws SQLException
 			lendet.add(le); // per secilen lend psh te viti te pare i merr te dhenat dhe i bon add ne listen lendet
 		}
 		return lendet;
+		
+public List<LendaEntity> returnLendet(Connection connection) throws SQLException{
+		List<LendaEntity> lendet = new ArrayList<LendaEntity>();
+		PreparedStatement pst = connection.prepareStatement(select_ALLLendet); // kthen te gjitha lendet qe gjinden ne tabelen lendet
+	
+		ResultSet rs = pst.executeQuery();
+		while (rs.next())
+		{
+			LendaEntity le = new LendaEntity();
+			le.setID(rs.getInt("id"));
+			le.setLenda(rs.getString("lenda"));
+			le.setJava(rs.getInt("java"));
+			le.setDita(rs.getInt("dita"));
+			le.setViti(rs.getInt("viti"));
+			le.setOra(rs.getString("ora"));
+			lendet.add(le);
+		}
+		return lendet;
+	}
