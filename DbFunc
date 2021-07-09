@@ -50,7 +50,8 @@ public List<AfatiEntity> returnAfatet(Connection connection) throws SQLException
 		
 		return afatet;		
 	}
-
+	
+	
 	public List<LendaEntity> getLendet(Connection connection,int viti) throws SQLException{
 		List<LendaEntity> lendet = new ArrayList<LendaEntity>();
 		PreparedStatement pst = connection.prepareStatement(selectLendet); // kthen te gjitha lendet e nje viti te caktuar pshe 1,2,3
