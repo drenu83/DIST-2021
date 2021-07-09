@@ -1,1 +1,22 @@
+package Projekti;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import java.sql.*;
+
+public class DbFunc {
+
+	private String insert_Afat = "INSERT INTO afatet (afati, start_date,viti) VALUES (?,?,?)";
+	private String insert_Lend = "INSERT INTO lendet (lenda, java, dita, viti,ora) VALUES (?,?,?,?,?)";
+	private String select_ALL = "SELECT * FROM afatet";
+	private String selectAfati = "SELECT * FROM afatet WHERE afati = ? and viti =?";
+	private String selectLendet = "SELECT * FROM lendet WHERE viti = ?";
+	private String select_ALLLendet = "SELECT * FROM lendet";
+	private String delete_Lenden = "DELETE FROM lendet WHERE id = ?";
+	private String delete_Afatin = "DELETE FROM afatet WHERE id =?";
+	private String update_Lenden = "UPDATE lendet SET lenda = ?, java= ?,dita = ?, viti = ?, ora = ? WHERE id = ?";
+	private String update_Afatin = "UPDATE afatet SET afati = ?,start_date = ?, viti = ? WHERE id = ?";
+
+	
+	
